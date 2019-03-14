@@ -58,3 +58,5 @@ before_cache:
   # The lock changes based on folder name; normally $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm /tmp/gradle-caches-modules-2/gradle-caches-modules-2.lock
   - find $HOME/.gradle/wrapper -not -name "*-all.zip" -and -not -name "*-bin.zip" -delete
+after_success:
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
